@@ -43,12 +43,12 @@ while True:
         for key, value in shutdown_time.items():
             if (daymin_now_val()==time2daymin_val(value)):
                 cmdSht = 'sudo shutdown now'
-                os.sytem(cmdSht)
+                os.system(cmdSht)
 
     if ( (reboot_bool == 'True') ):
         for key, value in reboot_time.items():
             if (daymin_now_val()==time2daymin_val(value)):
                 cmdRbt = 'sudo reboot'
-                os.sytem(cmdRbt)
+                os.system(cmdRbt)
 
     sleep(1)
