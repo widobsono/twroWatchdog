@@ -28,11 +28,17 @@ reboot_time = eval(config.get('Timing', 'reboot_time'))
 shutdown_bool = config.get('Timing', 'shutdown_routine')
 shutdown_time = eval(config.get('Timing', 'shutdown_time'))
 
+startup_ct = 0
 
 while True:
     #epoch for interval
     #timer Boolean
     #epoch2000 = (datetime.now() - datetime(2000, 1, 1)).total_seconds()
+
+    if (startup_ct < 3):
+        sleep(30)
+        startup_ct = 5
+
     if ( (shutdown_bool == 'True') ):
         for key, value in shutdown_time.items():
             if (daymin_now_val()==time2daymin_val(value)):
